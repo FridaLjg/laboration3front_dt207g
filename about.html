@@ -30,25 +30,37 @@
         <main>
             <h2>Om</h2>
             <p>
-                Syftet med denna webbplats är att presentera och hantera arbetserfarenheter via en egenutvecklad webbtjänst.
-                Man kan på startsidan se sina regristrerade arbetserfarenheter. På undersidan "Lägg till arbetserfarenhet" 
-                kan man lägga till nya arbetserfarenheter genom ett formulär.
-                Kommunikation mellan webbplatsen och webbtjänsten sker med hjälp av Fetch API och data skickas och hämtas i JSON-format.
+                Syftet med denna webbplats är att presentera och hantera arbetserfarenheter via en egenutvecklad
+                webbtjänst. Man kan på startsidan se sina regristrerade arbetserfarenheter. På undersidan "Lägg till
+                arbetserfarenhet" kan man lägga till nya arbetserfarenheter genom ett formulär. Kommunikation mellan
+                webbplatsen och webbtjänsten sker med hjälp av Fetch API och data skickas och hämtas i JSON-format.
             </p>
 
             <h3>Databasserver</h3>
             <p>
-                I denna laboration används databasservern MySQL för lagring av data. 
-                Databasen innehåller tabellen workexperience där information om arbetserfarenheter lagras.
+                För lagring av data används NoSQL databasservern MongoDB tillsammans med Mongoose för schemahantering.
+                Databasen innehåller information om arbetserfarenheter med följande fält:<br>
+                Arbetsgivare (companyname)<br>
+                Arbetsroll (jobtitle)<br>
+                Plats (location)<br>
+                Arbetsbeskrivning (description)<br>
+                Mongoose används för att definiera databasens struktur och för att validera inkommande data innan den
+                sparas.
             </p>
 
             <h3>Slutsatser</h3>
             <p>
-                I denna laboration har jag lärt mig att skapa en REST-baserad webbtjänst som har stöd för CRUD
-                och att ansluta tjänsten till en databas. 
-                Under arbetets gång lärde jag mig hut viktig CORS är vid utveckling av webbtjänster.
-                Till en början hade jag inte med kodsnutten "app.use(cors());", vilket jag nu har lärt mig behövs för att
-                få webbplatsen och API:et att kommunicera med varandra.
+                Genom denna uppgift har jag lärt mig hur man skapar en webbtjänst med Express och MongoDB. En skillnad jag märkte
+                med att arbeta med MongoDB jämfört med MySQL är att i MongoDB skapas ett unikt id automatiskt för varje objekt. Detta 
+                är alltså inget jag behöver lägga till manuellt. MongoDb lade med andra ord till detta id:t fastän jag inte
+                har definierat det i schemat.<br>
+
+                En fördel jag upptäckte under arbetet med denna laboration var att det var lätt att lägga till nya fält i schemat. 
+                Då jag använde en del av arbetet från laboration 2, upptäckte jag att det saknades ett fält i schemat eftersom
+                id var något som skapades automatiskt. Då lade jag till fältet "description", vilket var smidigt. Jag valde att 
+                inte göra detta fält obligatoriskt, för att exprimentera hur valideringen fungerar i Mongoose (då de andra fälten är
+                obligatoriska).
+
             </p>
         </main>
 
