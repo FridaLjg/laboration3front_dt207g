@@ -99,6 +99,7 @@ form {
     padding: 2rem;
     margin-bottom: 1.5rem;
     background-color: antiquewhite;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 label {
@@ -184,6 +185,15 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 8px;
     box-sizing: border-box;
+}
+
+.empty-message {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    font-style: italic;
+    color: #666;
 }
 
 /*Mediaquery för mindre skärmar*/

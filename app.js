@@ -12,6 +12,15 @@ async function getWorkExperiences() {
     const response = await fetch("http://localhost:3000/workexperiences");
     const data = await response.json();
 
+    if (data.length === 0) {
+        workExperienceList.innerHTML = `
+        <li class="empty-message">
+            Inga arbetserfarenheter hittades.
+        </li>
+    `;
+        return;
+    }
+
     data.forEach(work => {
         workExperienceList.innerHTML += `
             <li>
