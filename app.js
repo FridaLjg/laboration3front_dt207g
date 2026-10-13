@@ -12,6 +12,10 @@ async function getWorkExperiences() {
                 <h3>${work.companyname}</h3>
                 <p>${work.jobtitle}</p>
                 <p>${work.location}</p>
+
+                <button onclick="deleteWorkExperience('${work._id}')">
+                Ta bort
+            </button>
             </li>
         `;
     });
@@ -22,6 +26,8 @@ const form = document.getElementById("workexperience-form");
 //Eventlyssnare
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
+
+    const workExperienceList = document.getElementById("workexperience-list");
 
     //Hämtar värden från inputfält
     const companyname = document.getElementById("companyname").value;
@@ -65,7 +71,28 @@ form.addEventListener("submit", async (e) => {
     });
 
     const data = await response.json();
+    window.location.href = "index.html";
 
-    console.log(data);
-
+    workExperienceList.innerHTML += `
+    <li>
+        <h3>${data.companyname}</h3>
+        <p>${data.jobtitle}</p>
+        <p>${data.location}</p>
+    </li>
+`;
 });
+
+//Delete
+async function deleteWorkExperience(id) {
+
+    const response = await fetch(
+        `http://localhost:3000/workexperiences/${id}`,
+        {
+            method: "DELETE"
+        }
+    );
+
+    if (response.ok) {
+        window.location.reload();
+    }
+}
