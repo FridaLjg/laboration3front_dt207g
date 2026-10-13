@@ -95,8 +95,14 @@ form {
     flex-direction: column;
     align-items: center;
     border: solid;
+    border-radius: 20px;
     padding: 2rem;
     margin-bottom: 1.5rem;
+    background-color: antiquewhite;
+}
+
+label {
+    font-weight: bold;
 }
 
 #workexperience-form input {
@@ -162,6 +168,22 @@ main h3 {
 
 main p {
     margin-bottom: 1rem;
+}
+
+.italic {
+    font-style: italic;
+}
+
+textarea {
+    width: 100%;
+    max-width: 500px;
+    min-height: 120px;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 /*Mediaquery för mindre skärmar*/

@@ -18,6 +18,7 @@ async function getWorkExperiences() {
                 <h3>${work.companyname}</h3>
                 <p>${work.jobtitle}</p>
                 <p>${work.location}</p>
+                <p class="italic">${work.description}</p>
 
                 <button onclick="deleteWorkExperience('${work._id}')">
                 Ta bort
