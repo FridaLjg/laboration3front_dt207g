@@ -48,4 +48,24 @@ form.addEventListener("submit", async (e) => {
         return;
     }
 
+    //Skapa objekt
+    const workExperience = {
+        companyname,
+        jobtitle,
+        location
+    };
+
+    //Post
+    const response = await fetch("http://localhost:3000/workexperiences", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(workExperience)
+    });
+
+    const data = await response.json();
+
+    console.log(data);
+
 });
