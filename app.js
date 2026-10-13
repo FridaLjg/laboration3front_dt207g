@@ -18,3 +18,12 @@ async function getWorkExperiences() {
 }
 
 getWorkExperiences();
+
+const form = document.getElementById("workexperience-form");
+
+//Eventlyssnare
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    console.log("Formuläret skickades!");
+});
